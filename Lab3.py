@@ -1,15 +1,15 @@
 """
- Name: Your Name
+ Name: Romeo Garcia, Angela You, Ashwin Deodhar
  Assignment: Lab 3 - Process dataset
  Course: CS 330
  Semester: Fall 2021
  Instructor: Dr. Cao
- Date: the current date
- Sources consulted: any books, individuals, etc consulted
+ Date: 10/14/2021
+ Sources consulted: group
 
- Known Bugs: description of known bugs and other program imperfections
+ Known Bugs: 
 
- Creativity: anything extra that you added to the lab
+ Creativity: 
 
  Instructions: instructions to user on how to execute your program
 
@@ -29,8 +29,7 @@ def splitData(data, trainData, testData, ratio):
     Instruction:
             There is no grading script for this function, because different group may select different dataset depending on their course project, but generally you should make sure that you code can divide the dataset correctly, since you may use it for the course project
     """
-    # your code here
-    pass
+    
 
 def splitDataRandom(data, trainData, testData, ratio):
     """
