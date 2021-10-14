@@ -25,11 +25,15 @@ def splitData(data, trainData, testData, ratio):
             testData, used to evaluate the performance of your machine learning model
             ratio, decide the percentage of training data on the whole dataset.
     Example:
-            You have a training data with 10000 data record, ratio is 0.7, so you will split the whole dataset and store the first 7000 of them in trainData, and the rest 3000 in testData
+            You have a training data with 10000 data record, ratio is 0.7, so you will split the whole dataset and 
+            store the first 7000 of them in trainData, and the rest 3000 in testData
     Instruction:
-            There is no grading script for this function, because different group may select different dataset depending on their course project, but generally you should make sure that you code can divide the dataset correctly, since you may use it for the course project
+            There is no grading script for this function, because different group may select different 
+            dataset depending on their course project, but generally you should make sure that you code can divide the dataset correctly, 
+            since you may use it for the course project
     """
     
+   
 
 def splitDataRandom(data, trainData, testData, ratio):
     """
