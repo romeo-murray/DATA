@@ -1,17 +1,18 @@
 """
- Name: Romeo Garcia, Angela You, Ashwin Deodhar
+ Name: Romeo Garcia, Angela You, Ashwin Deodar
  Assignment: Lab 3 - Process dataset
  Course: CS 330
  Semester: Fall 2021
  Instructor: Dr. Cao
- Date: 10/14/2021
- Sources consulted: group
+ Date: 10/13/21
+ Sources consulted: N/A
 
- Known Bugs: 
+ Known Bugs: N/A
 
- Creativity: 
+ Creativity: N/A
 
- Instructions: instructions to user on how to execute your program
+ Instructions: Keep this file, and data.txt in the same directory, and run lab3 in an IDE after
+ configuring options for running one of the modes.
 
 """
 import sys
@@ -25,15 +26,12 @@ def splitData(data, trainData, testData, ratio):
             testData, used to evaluate the performance of your machine learning model
             ratio, decide the percentage of training data on the whole dataset.
     Example:
-            You have a training data with 10000 data record, ratio is 0.7, so you will split the whole dataset and 
-            store the first 7000 of them in trainData, and the rest 3000 in testData
+            You have a training data with 10000 data record, ratio is 0.7, so you will split the whole dataset and store the first 7000 of them in trainData, and the rest 3000 in testData
     Instruction:
-            There is no grading script for this function, because different group may select different 
-            dataset depending on their course project, but generally you should make sure that you code can divide the dataset correctly, 
-            since you may use it for the course project
+            There is no grading script for this function, because different group may select different dataset depending on their course project, but generally you should make sure that you code can divide the dataset correctly, since you may use it for the course project
     """
-    
-   
+    # your code here
+    pass
 
 def splitDataRandom(data, trainData, testData, ratio):
     """
@@ -53,19 +51,37 @@ def main():
     options = parser.parse_args()
     mode = options.mode       # first get the mode
     print("mode is " + mode)
-    """
-    similar to Lab 2, please add your testing code here
-    """
-    # your code here
-    pass
-
+    if mode == "N":
+        """
+        The normal split mode
+        """
+        dataFile = options.input
+        trainData = options.output1
+        testData = options.output2
+        ratio = options.ratio
+        if dataFile == '' or trainData == '' or testData == '' or ratio == '':
+            showHelper()
+        
+        splitData(dataFile, trainData, testData, ratio)
+    elif mode == "R":
+        """
+        The random split mode
+        """
+        dataFile = options.input
+        trainData = options.output1
+        testData = options.output2
+        ratio = options.ratio
+        if dataFile == '' or trainData == '' or testData == '' or ratio == '':
+            showHelper()
+        
+        splitDataRandom(dataFile, trainData, testData, ratio)
+    
 def showHelper():
-    """
-    Similar to Lab 2, please update the showHelper function to show users how to use your code
-    """
     parser.print_help(sys.stderr)
-    # your code here
-
+    print("Please provide input augument. Here are examples:")
+    print("python " + sys.argv[0] + " --mode N --input data.txt --output1 TrainingData.txt --output2 TestData.txt --ratio 0.7")
+    print("python " + sys.argv[0] + " --mode R --input data.txt --output1 TrainingData.txt --output2 TestRandomData.txt --ratio 0.5")
+    
     sys.exit(0)
 
 
@@ -78,11 +94,19 @@ if __name__ == "__main__":
     parser.add_argument('--mode', dest='mode',
     default = '',    # default empty!
     help = 'Mode: R for random splitting, and N for the normal splitting')
+    parser.add_argument('--input', dest='input',
+    default = '',    # default empty!
+    help = 'The input file. Remains the same for both N mode and R mode, being the data file split.')
+    parser.add_argument('--output1', dest='output1',
+    default = '',    # default empty!
+    help = 'The first output file. For both modes this will be the TrainData that is produced.')
+    parser.add_argument('--output2', dest='output2',
+    default = '',    # default empty!
+    help = 'The second output file. For both modes this will be the TestData that is produced.')
+    parser.add_argument('--ratio', dest='ratio',
+    default = '',    # default empty!
+    help = 'The ratio. For both modes this will be what defines how the data is split.')
 
-    """
-    Similar to Lab 2, please update the argument, and add as you need
-    """
-    # your code here
     if len(sys.argv)<3:
         showHelper()
     main()
