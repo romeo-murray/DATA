@@ -34,14 +34,15 @@ def splitData(data, trainData, testData, ratio):
     out_train = open(trainData, "w")
     out_test = open(testData, "w")
 
-    with open(data) as file:
+    with open(data, 'r') as file:
         inputList = list(file)  # list of all the lines
-        rows = sum(1 for line in file) - 1 #gets rows, does not count header
+        inputList.pop(0) #gets rid of labels
+        rows = len(inputList) #get rows
         row_ratio = int(rows * float(ratio))
-        for i in range(row_ratio): #writes to train
-            out_train.write(inputList[i + 1])
-        for i in range(rows - row_ratio, rows): #writes to test
-            out_test.write(inputList[i + 1])
+        for i in range(row_ratio): #writes first row * ratio rows to train
+            out_train.write(inputList[i])
+        for i in range(row_ratio + 1, rows): #writes the rest of file to test
+            out_test.write(inputList[i])
     out_train.close()
     out_test.close()
 
