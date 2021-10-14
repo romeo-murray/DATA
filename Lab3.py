@@ -36,7 +36,12 @@ def splitData(data, trainData, testData, ratio):
 
     with open(data, 'r') as file:
         inputList = list(file)  # list of all the lines
-        inputList.pop(0) #gets rid of labels
+
+        #writes header
+        header = inputList.pop(0)
+        out_train.write(header)
+        out_test.write(header)
+
         rows = len(inputList) #get rows
         row_ratio = int(rows * float(ratio))
         for i in range(row_ratio): #writes first row * ratio rows to train
