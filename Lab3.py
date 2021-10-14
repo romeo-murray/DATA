@@ -1,5 +1,5 @@
 """
- Name: Romeo Garcia, Angela You, Ashwin Deodar
+ Name: Romeo Garcia, Angela You, Ashwin Deodhar
  Assignment: Lab 3 - Process dataset
  Course: CS 330
  Semester: Fall 2021
