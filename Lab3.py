@@ -31,16 +31,17 @@ def splitData(data, trainData, testData, ratio):
             There is no grading script for this function, because different group may select different dataset depending on their course project, but generally you should make sure that you code can divide the dataset correctly, since you may use it for the course project
     """
     
-    out_train = open("train_data.txt", "w")
-    out_test = open("test_data.txt", "w")
+    out_train = open(trainData, "w")
+    out_test = open(testData, "w")
 
     with open(data) as file:
-        input = file.readLines()  # list of all the lines
+        inputList = list(file)  # list of all the lines
         rows = sum(1 for line in file) - 1 #gets rows, does not count header
-        for i in range(int(rows * ratio)): #writes to train
-            out_train.write(input[i + 1])
-        for i in range(int(rows * ratio + 1, rows + 1)): #writes to test
-            out_test.write(input[i + 1])
+        row_ratio = int(rows * float(ratio))
+        for i in range(row_ratio): #writes to train
+            out_train.write(inputList[i + 1])
+        for i in range(rows - row_ratio, rows): #writes to test
+            out_test.write(inputList[i + 1])
     out_train.close()
     out_test.close()
 
