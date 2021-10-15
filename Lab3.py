@@ -18,6 +18,7 @@
 import sys
 import argparse
 import math
+import random
 
 def splitData(data, trainData, testData, ratio):
     """
