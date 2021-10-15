@@ -66,7 +66,7 @@ def splitDataRandom(data, trainData, testData, ratio):
     out_train = open(trainData, "w")
     out_test = open(testData, "w")
 
-    random.seed = 330
+    random.seed = 330 #sets a random seed for the initialization
     with open(data, 'r') as file:
         inputList = list(file)  # list of all the lines
 
