@@ -1,0 +1,15 @@
+{
+    //pop this bad boy into a launch_json in your google cloud to run this file. Make sure to delete this comment as well lol.
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Lab-3",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/rlg/rlg/Lab3.py",
+            "console": "integratedTerminal",
+            "args": ["--mode", "N" , "--input", "/home/rlg/rlg/data.txt", "--output1", "TrainingData.txt", "--output2", "TestData.txt", "--ratio", "0.7"]
+        }
+    ]
+}
