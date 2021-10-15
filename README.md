@@ -5,10 +5,10 @@
 
 **Did you have a meaning for the input feature?** Yes, to decipher whether or not we go to play tennis. :D
 
-**What is the output?** Give a ratio of what attributes cause us to not go play tennis, versus what attributes encourage us to do so.
+**What is the output?** Give a ratio of what attributes would cause us to not go play tennis, versus what attributes encourage us to do so.
 
 **How did you find this dataset?** It was provided to us through our second lab in artificial intelligience. 
 
-**How to run your code?** Keep the dataset and the Lab3 file in the same directory, and either through an IDE or command propmt for python, run Lab3, and it should parse the data by itself.
+**How to run your code?** Keep the dataset and the Lab3 file in the same directory, and either through an IDE or command propmt for python, run Lab3, and it should parse the data by itself. 
 
 :)
