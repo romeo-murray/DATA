@@ -62,8 +62,28 @@ def splitDataRandom(data, trainData, testData, ratio):
     Instruction:
             Almost same as splitData, the only difference is this function will randomly shuffle the input data, so you will randomly select data and store it in the trainData
     """
-    # your code here
-    pass
+    out_train = open(trainData, "w")
+    out_test = open(testData, "w")
+
+    random.seed = 330
+    with open(data, 'r') as file:
+        inputList = list(file)  # list of all the lines
+        inputList.pop(0) #gets rid of labels
+
+        totalRows = len(inputList) #gets total rows (aka 7000)
+        trackRows = totalRows #tracks number of elements in inputList
+
+        row_ratio = int(totalRows * float(ratio))
+
+        for i in range(row_ratio): #writes first row * ratio rows to train 3500
+            out_train.write(inputList.pop(random.randrange(trackRows)))
+            trackRows = trackRows - 1
+
+        for i in range(totalRows - row_ratio): #writes the rest of file to test
+            out_test.write(inputList.pop(random.randrange(trackRows)))
+            trackRows = trackRows - 1
+    out_train.close()
+    out_test.close()
 
 def main():
     options = parser.parse_args()
